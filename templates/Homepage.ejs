@@ -1,0 +1,81 @@
+<!-- customerList.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer List</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .type1{
+      background-color: rgba(0, 0, 255, 0.788);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-weight: bold;
+      word-spacing: 1px;
+    }
+    form button{
+      border-radius: 100px;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    form button:hover{
+      background-color: rgb(217, 217, 217);
+      transition: 0.4s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Customer List</h1>
+  <form action="/newone">
+    <button type="submit" class="type1">Add Customer</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Street</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% customers.forEach(customer => { %>
+        <tr>
+          <td name="first_name"><%= customer.first_name %></td> 
+          <td name="last_name"><%= customer.last_name %></td>
+          <td name="street"><%= customer.street %></td>
+          <td name="address"><%= customer.address %></td>
+          <td name="city"><%= customer.city %></td>
+          <td name="state"><%= customer.state %></td>
+          <td name="email"><%= customer.email %></td>
+          <td name="phone"><%= customer.phone %></td>
+          <td style="display: flex;">
+          <form action="/delete" method="post">
+            <button name="butt" style="margin-right: 5px;" type="submit" value="<%= customer.uuid%>">🗑️</button></form>
+          <form action="/update" method="post">
+            <button name="but" type="submit" value="<%= customer.uuid%>">✏️</button>
+          </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

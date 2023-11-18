@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: auto;
+    }
+    table th, table td {
+      text-align: center;
+      padding: 8px;
+    }
+    th{
+        padding: 5px;
+    }
+    input{
+        padding: 5px;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    #customerForm{
+        text-align: center;
+        align-items: center;
+        align-content: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Update Details</h1>
+  <form action="/update-details" method="post">
+    <table>
+      <tr>
+      <td><input type="text" name="first_name" placeholder="first name" ></td>
+      <td><input type="text" name="last_name" placeholder="last name" ></td>
+      </tr>
+      <tr>
+      <td><input type="text" name="street" placeholder="street" ></td>
+      <td><input type="text" name="address" placeholder="Address" ></td>
+      </tr>
+      <tr>
+      <td><input type="text" name="city" placeholder="City" ></td>
+      <td><input type="text" name="state" placeholder="State" ></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="email" placeholder="Email" ></td>
+      <td><input type="text" name="phone" placeholder="Phone" ></td>
+    </tr>
+    </table> 
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

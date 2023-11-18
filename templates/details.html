@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Customer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: auto;
+    }
+    table th, table td {
+      text-align: center;
+      padding: 8px;
+    }
+    th{
+        padding: 5px;
+    }
+    input{
+        padding: 5px;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    #customerForm{
+        text-align: center;
+        align-items: center;
+        align-content: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Create New Customer</h1>
+  <form id="customerForm" action="/create-customer" method="POST">
+    <table>
+      <tbody>
+        <tr>
+          <th><input type="text" id="first_name" name="first_name" placeholder="First Name" required></th>
+          <th><input type="text" id="last_name" name="last_name" placeholder="Last Name" required></th>
+        </tr>
+        <tr>
+
+          <th><input type="text" id="street" name="street" placeholder="Street"></th>
+
+          <th><input type="text" id="address" name="address" placeholder="Address"></th>
+        </tr>
+        <tr>
+
+          <th><input type="text" id="city" name="city" placeholder="City"></th>
+
+          <th><input type="text" id="state" name="state" placeholder="State"></th>
+        </tr>
+        <tr>
+
+          <th><input type="email" id="email" name="email" placeholder="Email"></th>
+
+          <th><input type="tel" id="phone" name="phone" placeholder="Phone"></th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <input type="submit" value="Create Customer">
+  </form>
+</body>
+</html>
